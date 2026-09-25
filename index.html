@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberSafe | Cyberbullying Detection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="index.html"><span>🛡️</span> CyberSafe</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#detect">Detect</a>
+      <a href="#learn">Learn</a>
+      <a href="#report">Report</a>
+    </nav>
+    <button class="nav-btn" onclick="document.getElementById('detect').scrollIntoView({behavior:'smooth'})">Check Message</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="pill">🛡️ Digital Safety & Awareness</div>
+        <h1>Make the internet<br><span>a safer place.</span></h1>
+        <p>CyberSafe helps you identify potentially harmful messages, understand cyberbullying, and learn safer ways to respond online.</p>
+        <div class="hero-actions">
+          <button class="primary" onclick="document.getElementById('detect').scrollIntoView({behavior:'smooth'})">Analyze a Message →</button>
+          <button class="secondary" onclick="document.getElementById('learn').scrollIntoView({behavior:'smooth'})">Learn About Cyberbullying</button>
+        </div>
+        <div class="trust"><span>✓ Free educational tool</span><span>✓ No message is stored</span><span>✓ Awareness focused</span></div>
+      </div>
+      <div class="hero-card">
+        <div class="shield">🛡️</div>
+        <h3>Stay Kind. Stay Safe.</h3>
+        <p>Think before you post, share, or reply.</p>
+        <div class="mini-stats"><div><b>01</b><small>Detect</small></div><div><b>02</b><small>Understand</small></div><div><b>03</b><small>Respond</small></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="detect">
+      <div class="section-title">
+        <div class="pill">🔍 Message Analyzer</div>
+        <h2>Check a message for harmful patterns</h2>
+        <p>Enter text below. This demo uses a simple educational rule-based detector. It is not a clinical or definitive classifier.</p>
+      </div>
+      <div class="detector">
+        <div class="input-panel">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Paste or type a message here..."></textarea>
+          <div class="examples">
+            <button onclick="useExample(0)">Try example</button>
+            <button onclick="useExample(1)">Try another</button>
+            <span id="charCount">0 characters</span>
+          </div>
+          <button class="primary full" onclick="analyzeMessage()">Analyze Message</button>
+        </div>
+        <div class="result-panel" id="result">
+          <div class="result-empty">
+            <div class="result-icon">🔎</div>
+            <h3>Your result will appear here</h3>
+            <p>We’ll look for common harmful or abusive language patterns and provide a safety-focused explanation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="learn">
+      <div class="section-title">
+        <div class="pill">📚 Awareness</div>
+        <h2>Know the signs of cyberbullying</h2>
+        <p>Cyberbullying can happen through social media, chats, games, comments, and other digital spaces.</p>
+      </div>
+      <div class="cards">
+        <article><div class="card-icon">💬</div><h3>Repeated insults</h3><p>Persistent name-calling, humiliation, threats, or abusive comments can be warning signs.</p></article>
+        <article><div class="card-icon">📸</div><h3>Sharing without consent</h3><p>Posting private photos, messages, or personal information to embarrass someone can cause harm.</p></article>
+        <article><div class="card-icon">🚫</div><h3>Deliberate exclusion</h3><p>Repeatedly excluding or targeting someone online may be part of harmful behavior.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="safety-box">
+        <div><div class="pill">🧭 What to do</div><h2>Pause. Protect. Report.</h2><p>If a message feels threatening or abusive, avoid escalating the conversation. Save evidence, block the account when appropriate, and use the platform’s reporting tools.</p></div>
+        <div class="steps"><div><b>01</b><span>Don't retaliate</span></div><div><b>02</b><span>Save evidence</span></div><div><b>03</b><span>Block & report</span></div></div>
+      </div>
+    </section>
+
+    <section class="section report-section" id="report">
+      <div class="section-title">
+        <div class="pill">📝 Safety Report</div>
+        <h2>Create a personal incident note</h2>
+        <p>This form creates a local note for your own records. It does not send a report to police, a school, or a platform.</p>
+      </div>
+      <form class="report-form" onsubmit="saveReport(event)">
+        <div class="two"><div><label>Date</label><input type="date" id="date" required></div><div><label>Platform</label><select id="platform"><option>Social media</option><option>Messaging app</option><option>Online game</option><option>Forum / comments</option><option>Other</option></select></div></div>
+        <label>What happened?</label>
+        <textarea id="incident" placeholder="Briefly describe what happened..." required></textarea>
+        <button class="primary" type="submit">Save Safety Note</button>
+        <p id="saved" class="saved"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer><div><b>🛡️ CyberSafe</b><p>Awareness today. Safer digital spaces tomorrow.</p></div><span>Educational project • 2026</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
